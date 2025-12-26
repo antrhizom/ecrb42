@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Users Collection
+    match /users/{userId} {
+      // User kann eigene Daten lesen und schreiben
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Alle authentifizierten User können basic stats lesen (für Dashboard-Statistiken)
+      allow read: if request.auth != null;
+    }
+    
+    // Access Codes Collection
+    match /access_codes/{code} {
+      // Jeder authentifizierte User kann Codes lesen (für Login)
+      allow read: if request.auth != null;
+      // Nur beim Erstellen schreibbar
+      allow create: if request.auth != null;
+    }
+    
+    // Alles andere verbieten
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
