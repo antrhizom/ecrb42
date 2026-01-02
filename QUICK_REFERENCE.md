@@ -1,4 +1,4 @@
-# Schnellreferenz - Urheberrecht Lernplattform v2.0
+# chnellreferenz - Urheberrecht Lernplattform v2.0
 
 ## 🚀 Quick Commands
 
