@@ -275,17 +275,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Wann entsteht Urheberrechtsschutz in der Schweiz?',
         options: [
           {
-            text: 'A) Nur nach Registrierung beim Amt',
+            text: 'Nur nach Registrierung beim Amt',
             correct: false,
             feedback: '❌ Falsch. Urheberrechtsschutz entsteht automatisch mit der Schöpfung - keine Registrierung nötig!'
           },
           {
-            text: 'B) Automatisch im Moment der Schöpfung',
+            text: 'Automatisch im Moment der Schöpfung',
             correct: true,
             feedback: '✅ Richtig! Der Schutz entsteht automatisch im Moment der Schöpfung.'
           },
           {
-            text: 'C) Erst nach Veröffentlichung',
+            text: 'Erst nach Veröffentlichung',
             correct: false,
             feedback: '❌ Falsch. Eine Veröffentlichung ist nicht erforderlich. Auch unveröffentlichte Werke sind geschützt!'
           }
@@ -295,17 +295,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Wie lange dauert der Urheberrechtsschutz für literarische Werke?',
         options: [
           {
-            text: 'A) 50 Jahre nach Tod des Urhebers',
+            text: '50 Jahre nach Tod des Urhebers',
             correct: false,
             feedback: '❌ Falsch. Das wäre zu kurz. Die Schutzfrist ist länger.'
           },
           {
-            text: 'B) 70 Jahre nach Tod des Urhebers',
+            text: '70 Jahre nach Tod des Urhebers',
             correct: true,
             feedback: '✅ Genau! 70 Jahre nach dem Tod des Urhebers (Art. 29 URG).'
           },
           {
-            text: 'C) Unbegrenzt / Ewig',
+            text: 'Unbegrenzt / Ewig',
             correct: false,
             feedback: '❌ Falsch. Der Schutz erlischt irgendwann - er ist nicht ewig.'
           }
@@ -315,17 +315,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Welches Element erreicht typischerweise KEINE Schöpfungshöhe?',
         options: [
           {
-            text: 'A) Ein Roman mit eigenem Schreibstil',
+            text: 'Ein Roman mit eigenem Schreibstil',
             correct: false,
             feedback: '❌ Nicht ganz. Ein Roman mit eigenem Stil hat definitiv individuellen Charakter.'
           },
           {
-            text: 'B) Ein kurzer Werbe-Slogan wie "Just Do It"',
+            text: 'Ein kurzer Werbe-Slogan wie "Just Do It"',
             correct: true,
             feedback: '✅ Richtig! Kurze Slogans wie "Just Do It" sind meist zu kurz für Urheberrechtsschutz (aber evtl. markenrechtlich geschützt).'
           },
           {
-            text: 'C) Eine Original-Musikkomposition',
+            text: 'Eine Original-Musikkomposition',
             correct: false,
             feedback: '❌ Falsch. Original-Kompositionen sind klar geschützte Werke mit individuellem Charakter.'
           }
@@ -335,17 +335,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Ein einfaches Handy-Foto von Ihrem Mittagessen - ist es geschützt?',
         options: [
           {
-            text: 'A) Nein, weil es zu banal ist',
+            text: 'Nein, weil es zu banal ist',
             correct: false,
             feedback: '❌ Falsch! Die Sonderregel für Fotos gilt für ALLE Fotos.'
           },
           {
-            text: 'B) Ja, für 50 Jahre ab Herstellung',
+            text: 'Ja, für 50 Jahre ab Herstellung',
             correct: true,
             feedback: '✅ Genau! Art. 2 Abs. 3bis URG schützt ALLE Fotografien für 50 Jahre, auch einfache Schnappschüsse.'
           },
           {
-            text: 'C) Ja, für 70 Jahre nach Ihrem Tod',
+            text: 'Ja, für 70 Jahre nach Ihrem Tod',
             correct: false,
             feedback: '❌ Falsch. Es gibt Schutz, aber nicht so lange. Nur Kunstfotografien mit individuellem Charakter haben 70 Jahre Schutz.'
           }
@@ -356,17 +356,17 @@ export const moduleData: Record<string, ModuleContent> = {
         multipleCorrect: true,
         options: [
           {
-            text: 'A) Alle Fotografien sind geschützt - auch einfache Schnappschüsse',
+            text: 'Alle Fotografien sind geschützt - auch einfache Schnappschüsse',
             correct: true,
             feedback: '✅ Richtig! Art. 2 Abs. 3bis URG schützt alle Fotografien.'
           },
           {
-            text: 'B) Einfache Fotos haben 50 Jahre Schutz ab Herstellung',
+            text: 'Einfache Fotos haben 50 Jahre Schutz ab Herstellung',
             correct: true,
             feedback: '✅ Korrekt! Nicht-künstlerische Fotos sind 50 Jahre geschützt.'
           },
           {
-            text: 'C) Fotos von öffentlichen Gebäuden dürfen immer frei verwendet werden',
+            text: 'Fotos von öffentlichen Gebäuden dürfen immer frei verwendet werden',
             correct: false,
             feedback: '❌ Falsch. Auch Fotos von öffentlichen Gebäuden sind geschützt. Es gibt keine automatische Erlaubnis.'
           },
@@ -444,17 +444,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Wann ist ein literarisches Werk gemeinfrei?',
         options: [
           {
-            text: 'A) Sofort nach Veröffentlichung',
+            text: 'Sofort nach Veröffentlichung',
             correct: false,
             feedback: '❌ Falsch. Veröffentlichte Werke sind geschützt!'
           },
           {
-            text: 'B) 70 Jahre nach dem Tod des Urhebers',
+            text: '70 Jahre nach dem Tod des Urhebers',
             correct: true,
             feedback: '✅ Richtig! Nach 70 Jahren wird das Werk gemeinfrei.'
           },
           {
-            text: 'C) Nie - Schutz ist ewig',
+            text: 'Nie - Schutz ist ewig',
             correct: false,
             feedback: '❌ Falsch. Der Schutz ist zeitlich begrenzt.'
           }
@@ -464,17 +464,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Was bedeutet eine CC BY-Lizenz?',
         options: [
           {
-            text: 'A) Das Werk ist vollständig gemeinfrei',
+            text: 'Das Werk ist vollständig gemeinfrei',
             correct: false,
             feedback: '❌ Nein. CC BY ist nicht gemeinfrei, sondern eine Lizenz mit Bedingungen.'
           },
           {
-            text: 'B) Ich darf das Werk nutzen, muss aber den Urheber nennen',
+            text: 'Ich darf das Werk nutzen, muss aber den Urheber nennen',
             correct: true,
             feedback: '✅ Genau! "BY" steht für "Attribution" = Namensnennung.'
           },
           {
-            text: 'C) Nur private Nutzung erlaubt',
+            text: 'Nur private Nutzung erlaubt',
             correct: false,
             feedback: '❌ Falsch. CC BY erlaubt auch kommerzielle Nutzung - solange man den Urheber nennt.'
           }
@@ -484,17 +484,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Welches dieser Werke ist NICHT automatisch gemeinfrei?',
         options: [
           {
-            text: 'A) Schweizer Bundesgesetz (aktueller Gesetzestext)',
+            text: 'Schweizer Bundesgesetz (aktueller Gesetzestext)',
             correct: false,
             feedback: '❌ Falsch. Gesetzestexte sind gemeinfrei (Art. 5 URG)!'
           },
           {
-            text: 'B) Bundesgerichts-Urteil',
+            text: 'Bundesgerichts-Urteil',
             correct: false,
             feedback: '❌ Falsch. Gerichtsentscheide sind gemeinfrei (Art. 5 URG)!'
           },
           {
-            text: 'C) Kommentar zum Gesetz aus einem Rechtsbuch',
+            text: 'Kommentar zum Gesetz aus einem Rechtsbuch',
             correct: true,
             feedback: '✅ Richtig! Nur der reine Gesetzestext ist frei, nicht Kommentare oder Analysen.'
           }
@@ -504,17 +504,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Eine Mozart-Symphonie ist gemeinfrei. Gilt das auch für die Spotify-Aufnahme?',
         options: [
           {
-            text: 'A) Ja, wenn die Komposition gemeinfrei ist, ist auch die Aufnahme frei',
+            text: 'Ja, wenn die Komposition gemeinfrei ist, ist auch die Aufnahme frei',
             correct: false,
             feedback: '❌ Falsch! Aufnahmen haben eigene Rechte.'
           },
           {
-            text: 'B) Nein, die Aufnahme hat eigene Rechte (Leistungsschutzrechte)',
+            text: 'Nein, die Aufnahme hat eigene Rechte (Leistungsschutzrechte)',
             correct: true,
             feedback: '✅ Richtig! Die Komposition mag frei sein, aber Orchesteraufnahmen haben eigene Rechte (Leistungsschutzrechte).'
           },
           {
-            text: 'C) Nur mit Spotify Premium erlaubt',
+            text: 'Nur mit Spotify Premium erlaubt',
             correct: false,
             feedback: '❌ Falsch. Das hat nichts mit Streaming-Abos zu tun.'
           }
@@ -587,17 +587,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Was ist KEINE Voraussetzung für ein zulässiges Zitat?',
         options: [
           {
-            text: 'A) Eigenes Werk als Basis',
+            text: 'Eigenes Werk als Basis',
             correct: false,
             feedback: '❌ Falsch. Das ist eine Voraussetzung!'
           },
           {
-            text: 'B) Quellenangabe',
+            text: 'Quellenangabe',
             correct: false,
             feedback: '❌ Falsch. Quellenangabe ist Pflicht!'
           },
           {
-            text: 'C) Schriftliche Erlaubnis des Urhebers',
+            text: 'Schriftliche Erlaubnis des Urhebers',
             correct: true,
             feedback: '✅ Richtig! Für ein Zitat brauchen Sie KEINE Erlaubnis - nur die drei gesetzlichen Voraussetzungen.'
           }
@@ -607,17 +607,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Dürfen Sie ein ganzes Gedicht als "Zitat" in Ihre Präsentation aufnehmen?',
         options: [
           {
-            text: 'A) Ja, mit Quellenangabe immer erlaubt',
+            text: 'Ja, mit Quellenangabe immer erlaubt',
             correct: false,
             feedback: '❌ Falsch. Ganze Werke sind problematisch.'
           },
           {
-            text: 'B) Nur wenn es absolut notwendig ist (z.B. für Gedichtanalyse)',
+            text: 'Nur wenn es absolut notwendig ist (z.B. für Gedichtanalyse)',
             correct: true,
             feedback: '✅ Richtig! Ein ganzes Gedicht darf nur zitiert werden, wenn es für den Zweck notwendig ist (z.B. Gedichtinterpretation).'
           },
           {
-            text: 'C) Nein, nie erlaubt',
+            text: 'Nein, nie erlaubt',
             correct: false,
             feedback: '❌ Nicht ganz. In bestimmten Fällen (z.B. Gedichtanalyse) kann es notwendig sein.'
           }
@@ -627,17 +627,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Was bedeutet "eigenes Werk als Basis"?',
         options: [
           {
-            text: 'A) Das Zitat muss in einen eigenen Text eingebettet sein, nicht allein stehen',
+            text: 'Das Zitat muss in einen eigenen Text eingebettet sein, nicht allein stehen',
             correct: true,
             feedback: '✅ Genau! Sie müssen selbst etwas Eigenständiges schaffen - das Zitat ist nur Beiwerk.'
           },
           {
-            text: 'B) Sie müssen mindestens 1000 Wörter eigenen Text schreiben',
+            text: 'Sie müssen mindestens 1000 Wörter eigenen Text schreiben',
             correct: false,
             feedback: '❌ Falsch. Es gibt keine feste Wortanzahl.'
           },
           {
-            text: 'C) Das Zitat darf die Hauptsache sein',
+            text: 'Das Zitat darf die Hauptsache sein',
             correct: false,
             feedback: '❌ Falsch. Das Zitat darf gerade NICHT die Hauptsache sein.'
           }
@@ -647,17 +647,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Müssen Sie auch bei gemeinfreien Werken die Quelle angeben?',
         options: [
           {
-            text: 'A) Nein, nur bei geschützten Werken',
+            text: 'Nein, nur bei geschützten Werken',
             correct: false,
             feedback: '❌ Falsch. Quellenangabe ist unabhängig vom Schutzstatus.'
           },
           {
-            text: 'B) Ja, die Quellenangabe ist immer erforderlich (Art. 25 Abs. 2 URG)',
+            text: 'Ja, die Quellenangabe ist immer erforderlich (Art. 25 Abs. 2 URG)',
             correct: true,
             feedback: '✅ Richtig! Die Quellenangabe ist IMMER Pflicht - auch bei gemeinfreien Werken.'
           },
           {
-            text: 'C) Nur in wissenschaftlichen Arbeiten',
+            text: 'Nur in wissenschaftlichen Arbeiten',
             correct: false,
             feedback: '❌ Falsch. Die Pflicht gilt überall.'
           }
@@ -730,17 +730,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Ist reiner KI-Output automatisch urheberrechtlich geschützt?',
         options: [
           {
-            text: 'A) Ja, immer',
+            text: 'Ja, immer',
             correct: false,
             feedback: '❌ Falsch. Für Schutz braucht es "geistige Schöpfung".'
           },
           {
-            text: 'B) Nein, ohne wesentlichen menschlichen Beitrag kein Schutz',
+            text: 'Nein, ohne wesentlichen menschlichen Beitrag kein Schutz',
             correct: true,
             feedback: '✅ Richtig! KI-Output ohne wesentliche menschliche Schöpfung ist nicht geschützt.'
           },
           {
-            text: 'C) Nur in der Schweiz geschützt',
+            text: 'Nur in der Schweiz geschützt',
             correct: false,
             feedback: '❌ Falsch. Das Prinzip gilt international ähnlich.'
           }
@@ -750,17 +750,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Darf man urheberrechtlich geschützte Werke zum Training von KI nutzen?',
         options: [
           {
-            text: 'A) Ja, für KI-Training ist alles erlaubt',
+            text: 'Ja, für KI-Training ist alles erlaubt',
             correct: false,
             feedback: '❌ Nicht ganz. Diese Frage ist rechtlich noch nicht abschließend geklärt.'
           },
           {
-            text: 'B) Nein, niemals ohne Erlaubnis',
+            text: 'Nein, niemals ohne Erlaubnis',
             correct: false,
             feedback: '❌ Zu absolut. Es gibt verschiedene Rechtsansichten.'
           },
           {
-            text: 'C) Rechtlich umstritten - noch nicht abschließend geklärt',
+            text: 'Rechtlich umstritten - noch nicht abschließend geklärt',
             correct: true,
             feedback: '✅ Richtig! Diese Frage wird gerade rechtlich diskutiert und ist nicht abschließend geklärt.'
           }
@@ -770,17 +770,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Sie geben ChatGPT einen detaillierten Prompt und überarbeiten den Output intensiv. Ist das Ergebnis geschützt?',
         options: [
           {
-            text: 'A) Nein, nie geschützt',
+            text: 'Nein, nie geschützt',
             correct: false,
             feedback: '❌ Zu absolut. Es kommt auf Ihren Beitrag an.'
           },
           {
-            text: 'B) Möglicherweise, wenn Ihre Überarbeitung ausreichend kreativ ist',
+            text: 'Möglicherweise, wenn Ihre Überarbeitung ausreichend kreativ ist',
             correct: true,
             feedback: '✅ Richtig! Wenn Sie wesentlich kreativ beitragen, kann Schutz entstehen.'
           },
           {
-            text: 'C) Ja, automatisch durch den Prompt',
+            text: 'Ja, automatisch durch den Prompt',
             correct: false,
             feedback: '❌ Falsch. Ein Prompt allein reicht meist nicht aus.'
           }
@@ -790,17 +790,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Was bedeutet "Text und Data Mining" (TDM)?',
         options: [
           {
-            text: 'A) Automatische Analyse großer Datenmengen',
+            text: 'Automatische Analyse großer Datenmengen',
             correct: true,
             feedback: '✅ Richtig! TDM ist die automatisierte Analyse von Daten - relevant für KI-Training.'
           },
           {
-            text: 'B) Manuelles Lesen von Texten',
+            text: 'Manuelles Lesen von Texten',
             correct: false,
             feedback: '❌ Falsch. "Mining" bedeutet automatisierte Verarbeitung.'
           },
           {
-            text: 'C) Nur für wissenschaftliche Forschung erlaubt',
+            text: 'Nur für wissenschaftliche Forschung erlaubt',
             correct: false,
             feedback: '❌ Nicht ganz. TDM hat breitere Anwendungen.'
           }
@@ -920,17 +920,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Was erlaubt Art. 19 URG?',
         options: [
           {
-            text: 'A) Jede Nutzung für Bildungszwecke',
+            text: 'Jede Nutzung für Bildungszwecke',
             correct: false,
             feedback: '❌ Zu weit gefasst. Es gibt klare Grenzen.'
           },
           {
-            text: 'B) Nutzung veröffentlichter Werke für Unterricht in der Klasse',
+            text: 'Nutzung veröffentlichter Werke für Unterricht in der Klasse',
             correct: true,
             feedback: '✅ Richtig! Art. 19 URG erlaubt die Nutzung für Unterricht - aber mit Einschränkungen.'
           },
           {
-            text: 'C) Nur private Nutzung zu Hause',
+            text: 'Nur private Nutzung zu Hause',
             correct: false,
             feedback: '❌ Falsch. Art. 19 betrifft auch Unterricht.'
           }
@@ -940,17 +940,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Wer rechnet den GT7 für öffentliche Schulen ab?',
         options: [
           {
-            text: 'A) Jede Schule direkt an ProLitteris',
+            text: 'Jede Schule direkt an ProLitteris',
             correct: false,
             feedback: '❌ Falsch. Es gibt eine zentrale Stelle.'
           },
           {
-            text: 'B) Die EDK (Schweizerische Konferenz der kantonalen Erziehungsdirektoren)',
+            text: 'Die EDK (Schweizerische Konferenz der kantonalen Erziehungsdirektoren)',
             correct: true,
             feedback: '✅ Richtig! Die EDK zieht die Vergütungen für öffentliche Schulen ein.'
           },
           {
-            text: 'C) Die einzelnen Lehrpersonen',
+            text: 'Die einzelnen Lehrpersonen',
             correct: false,
             feedback: '❌ Falsch. Lehrpersonen müssen nicht einzeln abrechnen.'
           }
@@ -960,17 +960,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Dürfen Sie als Lehrperson ein ganzes Lehrbuch kopieren?',
         options: [
           {
-            text: 'A) Ja, für Unterricht ist alles erlaubt',
+            text: 'Ja, für Unterricht ist alles erlaubt',
             correct: false,
             feedback: '❌ Falsch. Es gibt klare Grenzen.'
           },
           {
-            text: 'B) Nein, nur Ausschnitte sind erlaubt',
+            text: 'Nein, nur Ausschnitte sind erlaubt',
             correct: true,
             feedback: '✅ Richtig! Ganze Bücher kopieren ist NICHT durch GT7 gedeckt.'
           },
           {
-            text: 'C) Ja, wenn es vergriffen ist',
+            text: 'Ja, wenn es vergriffen ist',
             correct: false,
             feedback: '❌ Falsch. Auch dann nicht ohne Weiteres.'
           }
@@ -980,17 +980,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Was bedeutet "schulinterne Nutzung"?',
         options: [
           {
-            text: 'A) Material nur in der Schule, nicht öffentlich im Internet',
+            text: 'Material nur in der Schule, nicht öffentlich im Internet',
             correct: true,
             feedback: '✅ Richtig! Schulintern = auf schulinternen Plattformen, nicht öffentlich zugänglich.'
           },
           {
-            text: 'B) Material darf überall veröffentlicht werden',
+            text: 'Material darf überall veröffentlicht werden',
             correct: false,
             feedback: '❌ Falsch. Öffentliche Veröffentlichung ist nicht gedeckt.'
           },
           {
-            text: 'C) Nur auf Papier, nicht digital',
+            text: 'Nur auf Papier, nicht digital',
             correct: false,
             feedback: '❌ Falsch. Digital ist auch OK, solange schulintern.'
           }
@@ -1096,17 +1096,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Was verbietet Art. 19 Abs. 3 URG?',
         options: [
           {
-            text: 'A) Jede Nutzung von Lehrmitteln im Unterricht',
+            text: 'Jede Nutzung von Lehrmitteln im Unterricht',
             correct: false,
             feedback: '❌ Falsch. Nutzung ist OK, aber nicht zur Herstellung neuer Materialien.'
           },
           {
-            text: 'B) Verwendung handelsüblicher Werke zur Herstellung von Unterrichtsmaterial',
+            text: 'Verwendung handelsüblicher Werke zur Herstellung von Unterrichtsmaterial',
             correct: true,
             feedback: '✅ Richtig! Sie dürfen Lehrmittel NICHT als Vorlage für eigene Materialien verwenden.'
           },
           {
-            text: 'C) Digitalisierung von Lehrmitteln',
+            text: 'Digitalisierung von Lehrmitteln',
             correct: false,
             feedback: '❌ Falsch. Das ist ein anderes Thema.'
           }
@@ -1116,17 +1116,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Dürfen Sie ein Arbeitsblatt mit Ihren Kolleg/innen teilen?',
         options: [
           {
-            text: 'A) Ja, unbegrenzt mit allen',
+            text: 'Ja, unbegrenzt mit allen',
             correct: false,
             feedback: '❌ Vorsicht! Bei systematischer Verbreitung kann es zum "Lehrmittel" werden.'
           },
           {
-            text: 'B) Ja, im kleinen Rahmen OK - aber nicht systematisch verbreiten',
+            text: 'Ja, im kleinen Rahmen OK - aber nicht systematisch verbreiten',
             correct: true,
             feedback: '✅ Richtig! Informeller Austausch ist OK, aber nicht systematische Verbreitung.'
           },
           {
-            text: 'C) Nein, nie erlaubt',
+            text: 'Nein, nie erlaubt',
             correct: false,
             feedback: '❌ Zu streng. Informeller Austausch ist grundsätzlich OK.'
           }
@@ -1136,17 +1136,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Sie laden ein Verlagsarbeitsblatt in ChatGPT hoch, um eine "ähnliche Version" zu erstellen. Ist das erlaubt?',
         options: [
           {
-            text: 'A) Ja, wenn die KI stark verändert',
+            text: 'Ja, wenn die KI stark verändert',
             correct: false,
             feedback: '❌ Falsch. Art. 19 Abs. 3 URG verbietet diese Verwendung.'
           },
           {
-            text: 'B) Nein, das verstößt gegen Art. 19 Abs. 3 URG',
+            text: 'Nein, das verstößt gegen Art. 19 Abs. 3 URG',
             correct: true,
             feedback: '✅ Richtig! Handelsübliche Lehrmittel dürfen NICHT als Vorlage dienen - auch nicht mit KI.'
           },
           {
-            text: 'C) Ja, für Bildung ist alles erlaubt',
+            text: 'Ja, für Bildung ist alles erlaubt',
             correct: false,
             feedback: '❌ Falsch. Es gibt klare Verbote.'
           }
@@ -1156,17 +1156,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Was ist der sicherste Weg, KI für Unterrichtsmaterial zu nutzen?',
         options: [
           {
-            text: 'A) Geschützte Materialien hochladen und umarbeiten lassen',
+            text: 'Geschützte Materialien hochladen und umarbeiten lassen',
             correct: false,
             feedback: '❌ Falsch. Das ist problematisch.'
           },
           {
-            text: 'B) Eigene Notizen in eigenen Worten hochladen oder KI eigenständig recherchieren lassen',
+            text: 'Eigene Notizen in eigenen Worten hochladen oder KI eigenständig recherchieren lassen',
             correct: true,
             feedback: '✅ Richtig! Ihre eigenen Notizen sind IHRE Werke - kein Problem mit fremden Rechten.'
           },
           {
-            text: 'C) Links zu Artikeln geben, die KI dann kopiert',
+            text: 'Links zu Artikeln geben, die KI dann kopiert',
             correct: false,
             feedback: '❌ Grauzone. Sie beauftragen die Vervielfältigung.'
           }
@@ -1274,17 +1274,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Welche Plattform ist durch GT7 für Material-Verteilung gedeckt?',
         options: [
           {
-            text: 'A) Öffentliche Schulwebsite',
+            text: 'Öffentliche Schulwebsite',
             correct: false,
             feedback: '❌ Falsch. Öffentlich ist NICHT gedeckt.'
           },
           {
-            text: 'B) Schulinternes Moodle (passwortgeschützt)',
+            text: 'Schulinternes Moodle (passwortgeschützt)',
             correct: true,
             feedback: '✅ Richtig! Schulinterne Plattformen mit Zugriffsbeschränkung sind OK.'
           },
           {
-            text: 'C) Instagram oder Facebook',
+            text: 'Instagram oder Facebook',
             correct: false,
             feedback: '❌ Falsch. Social Media ist öffentlich und nicht gedeckt.'
           }
@@ -1294,17 +1294,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Dürfen Sie eine Netflix-Dokumentation im Unterricht zeigen?',
         options: [
           {
-            text: 'A) Ja, GT7 deckt alle Streaming-Dienste',
+            text: 'Ja, GT7 deckt alle Streaming-Dienste',
             correct: false,
             feedback: '❌ Falsch. Streaming-Dienste haben eigene Lizenzen.'
           },
           {
-            text: 'B) Lizenzabhängig - prüfen Sie die AGB von Netflix',
+            text: 'Lizenzabhängig - prüfen Sie die AGB von Netflix',
             correct: true,
             feedback: '✅ Richtig! Streaming-Dienste haben eigene Nutzungsbedingungen - GT7 gilt hier nicht automatisch.'
           },
           {
-            text: 'C) Nein, nie erlaubt',
+            text: 'Nein, nie erlaubt',
             correct: false,
             feedback: '❌ Zu absolut. Es kommt auf die Lizenz an.'
           }
@@ -1314,17 +1314,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Was bedeutet "schulintern"?',
         options: [
           {
-            text: 'A) Nur in der Schweiz',
+            text: 'Nur in der Schweiz',
             correct: false,
             feedback: '❌ Falsch. Das meint etwas anderes.'
           },
           {
-            text: 'B) Zugriffsbeschränkt auf Schulmitglieder, nicht öffentlich',
+            text: 'Zugriffsbeschränkt auf Schulmitglieder, nicht öffentlich',
             correct: true,
             feedback: '✅ Richtig! Schulintern = passwortgeschützt, nur für Schulmitglieder zugänglich.'
           },
           {
-            text: 'C) Nur auf Papier, nicht digital',
+            text: 'Nur auf Papier, nicht digital',
             correct: false,
             feedback: '❌ Falsch. Digital ist OK, wenn zugriffsbeschränkt.'
           }
@@ -1334,17 +1334,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Sie laden ein Verlagsarbeitsblatt in ChatGPT hoch, um ein Quiz zu erstellen. Ist das OK?',
         options: [
           {
-            text: 'A) Ja, für Bildung erlaubt',
+            text: 'Ja, für Bildung erlaubt',
             correct: false,
             feedback: '❌ Falsch. Art. 19 Abs. 3 URG verbietet dies.'
           },
           {
-            text: 'B) Nein, das verstößt gegen Art. 19 Abs. 3 URG',
+            text: 'Nein, das verstößt gegen Art. 19 Abs. 3 URG',
             correct: true,
             feedback: '✅ Richtig! Upload von Lehrmitteln zur Materialerstellung ist verboten.'
           },
           {
-            text: 'C) Ja, wenn die KI stark verändert',
+            text: 'Ja, wenn die KI stark verändert',
             correct: false,
             feedback: '❌ Falsch. Das Verbot gilt unabhängig vom Grad der Veränderung.'
           }
@@ -1354,17 +1354,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '5. Was ist der Unterschied zwischen "KI recherchiert" und "Link hochladen"?',
         options: [
           {
-            text: 'A) Kein Unterschied',
+            text: 'Kein Unterschied',
             correct: false,
             feedback: '❌ Falsch. Es gibt einen wichtigen rechtlichen Unterschied.'
           },
           {
-            text: 'B) Bei "KI recherchiert" wählt KI selbst Quellen (sicher). Bei "Link" beauftragen Sie Vervielfältigung',
+            text: 'Bei "KI recherchiert" wählt KI selbst Quellen (sicher). Bei "Link" beauftragen Sie Vervielfältigung',
             correct: true,
             feedback: '✅ Richtig! "Recherchiere zu X" = sicher. "Nutze diesen Artikel" = problematisch.'
           },
           {
-            text: 'C) Link ist sicherer',
+            text: 'Link ist sicherer',
             correct: false,
             feedback: '❌ Falsch. Genau umgekehrt!'
           }
@@ -1472,17 +1472,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Wem gehören die Urheberrechte an einer Schülerarbeit?',
         options: [
           {
-            text: 'A) Der Schule',
+            text: 'Der Schule',
             correct: false,
             feedback: '❌ Falsch. Die Schule darf sie nutzen, aber besitzt nicht die Rechte.'
           },
           {
-            text: 'B) Dem/der Schüler/in',
+            text: 'Dem/der Schüler/in',
             correct: true,
             feedback: '✅ Richtig! Schüler/innen besitzen die Urheberrechte an ihren eigenen Werken.'
           },
           {
-            text: 'C) Der Lehrperson',
+            text: 'Der Lehrperson',
             correct: false,
             feedback: '❌ Falsch. Lehrpersonen sind nicht Urheber.'
           }
@@ -1492,17 +1492,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Darf die Schule Schülerarbeiten auf der Website veröffentlichen?',
         options: [
           {
-            text: 'A) Ja, automatisch erlaubt',
+            text: 'Ja, automatisch erlaubt',
             correct: false,
             feedback: '❌ Falsch. Es braucht Einwilligung.'
           },
           {
-            text: 'B) Nur mit Einwilligung (bei Minderjährigen: Erziehungsberechtigte)',
+            text: 'Nur mit Einwilligung (bei Minderjährigen: Erziehungsberechtigte)',
             correct: true,
             feedback: '✅ Richtig! Veröffentlichung erfordert Einwilligung der Schüler/innen bzw. Erziehungsberechtigten.'
           },
           {
-            text: 'C) Nein, nie erlaubt',
+            text: 'Nein, nie erlaubt',
             correct: false,
             feedback: '❌ Falsch. Mit Einwilligung ist es möglich.'
           }
@@ -1512,17 +1512,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Ein/e Schüler/in nutzt Bilder aus Google für eine Präsentation. Ist das OK?',
         options: [
           {
-            text: 'A) Ja, für Schule ist alles erlaubt',
+            text: 'Ja, für Schule ist alles erlaubt',
             correct: false,
             feedback: '❌ Falsch. Auch Schüler/innen müssen Urheberrecht beachten.'
           },
           {
-            text: 'B) Nur mit freien Lizenzen (CC, gemeinfrei) oder Erlaubnis',
+            text: 'Nur mit freien Lizenzen (CC, gemeinfrei) oder Erlaubnis',
             correct: true,
             feedback: '✅ Richtig! Auch für Schularbeiten gilt das Urheberrecht - nutzen Sie freie Bilder!'
           },
           {
-            text: 'C) Nur mit Wasserzeichen',
+            text: 'Nur mit Wasserzeichen',
             correct: false,
             feedback: '❌ Falsch. Wasserzeichen ändern nichts an fehlender Erlaubnis.'
           }
@@ -1532,17 +1532,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Wie lange darf die Schule Schülerarbeiten archivieren?',
         options: [
           {
-            text: 'A) Gar nicht',
+            text: 'Gar nicht',
             correct: false,
             feedback: '❌ Falsch. Archivierung für Bildungszwecke ist OK.'
           },
           {
-            text: 'B) Angemessene Zeit für Bildungszwecke (Bewertung, Dokumentation)',
+            text: 'Angemessene Zeit für Bildungszwecke (Bewertung, Dokumentation)',
             correct: true,
             feedback: '✅ Richtig! Schulen dürfen Arbeiten für Bildungszwecke archivieren - aber nicht ewig.'
           },
           {
-            text: 'C) Unbegrenzt',
+            text: 'Unbegrenzt',
             correct: false,
             feedback: '❌ Falsch. Nur für angemessene Dauer.'
           }
@@ -1676,17 +1676,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '1. Dürfen Sie ein Verlagsarbeitsblatt in ChatGPT hochladen, um eine ähnliche Version zu erstellen?',
         options: [
           {
-            text: 'A) Ja, für Bildung erlaubt',
+            text: 'Ja, für Bildung erlaubt',
             correct: false,
             feedback: '❌ Falsch. Art. 19 Abs. 3 URG verbietet dies explizit.'
           },
           {
-            text: 'B) Nein, das verstößt gegen Art. 19 Abs. 3 URG',
+            text: 'Nein, das verstößt gegen Art. 19 Abs. 3 URG',
             correct: true,
             feedback: '✅ Richtig! Handelsübliche Lehrmittel dürfen NICHT zur Herstellung von Unterrichtsmaterial verwendet werden.'
           },
           {
-            text: 'C) Ja, wenn die KI stark verändert',
+            text: 'Ja, wenn die KI stark verändert',
             correct: false,
             feedback: '❌ Falsch. Das Verbot gilt unabhängig vom Grad der Veränderung.'
           }
@@ -1696,17 +1696,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '2. Was ist der rechtlich sicherste Weg, KI für Unterrichtsmaterial zu nutzen?',
         options: [
           {
-            text: 'A) Geschützte Materialien hochladen',
+            text: 'Geschützte Materialien hochladen',
             correct: false,
             feedback: '❌ Falsch. Das ist problematisch.'
           },
           {
-            text: 'B) Eigene Notizen hochladen oder KI eigenständig recherchieren lassen',
+            text: 'Eigene Notizen hochladen oder KI eigenständig recherchieren lassen',
             correct: true,
             feedback: '✅ Richtig! Ihre Notizen sind IHRE Werke - kein Problem mit fremden Rechten.'
           },
           {
-            text: 'C) Links zu Artikeln geben',
+            text: 'Links zu Artikeln geben',
             correct: false,
             feedback: '❌ Grauzone. Sie beauftragen die Vervielfältigung.'
           }
@@ -1716,17 +1716,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '3. Ein/e Schüler/in nutzt ChatGPT für einen Aufsatz. Was ist wichtig?',
         options: [
           {
-            text: 'A) Absolut verboten',
+            text: 'Absolut verboten',
             correct: false,
             feedback: '❌ Zu streng. Es kommt auf Transparenz an.'
           },
           {
-            text: 'B) Erlaubt, aber Nutzung sollte transparent gemacht werden',
+            text: 'Erlaubt, aber Nutzung sollte transparent gemacht werden',
             correct: true,
             feedback: '✅ Richtig! Transparenz ist wichtig - Schüler/innen sollen KI-Nutzung offenlegen.'
           },
           {
-            text: 'C) Erlaubt und muss nicht erwähnt werden',
+            text: 'Erlaubt und muss nicht erwähnt werden',
             correct: false,
             feedback: '❌ Falsch. Transparenz ist Teil der akademischen Integrität.'
           }
@@ -1736,17 +1736,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '4. Ist KI-generierter Output urheberrechtlich geschützt?',
         options: [
           {
-            text: 'A) Ja, immer',
+            text: 'Ja, immer',
             correct: false,
             feedback: '❌ Falsch. Es braucht "geistige Schöpfung".'
           },
           {
-            text: 'B) Nein, ohne wesentlichen menschlichen Beitrag kein Schutz',
+            text: 'Nein, ohne wesentlichen menschlichen Beitrag kein Schutz',
             correct: true,
             feedback: '✅ Richtig! Reiner KI-Output ist meist nicht geschützt.'
           },
           {
-            text: 'C) Nur in Schulen geschützt',
+            text: 'Nur in Schulen geschützt',
             correct: false,
             feedback: '❌ Falsch. Das hat nichts mit dem Kontext zu tun.'
           }
@@ -1756,17 +1756,17 @@ export const moduleData: Record<string, ModuleContent> = {
         question: '5. Sie sind in der Schulverwaltung und erstellen mit KI einen Elternbrief. Ist das OK?',
         options: [
           {
-            text: 'A) Nein, KI darf in Schulen nicht genutzt werden',
+            text: 'Nein, KI darf in Schulen nicht genutzt werden',
             correct: false,
             feedback: '❌ Falsch. KI darf grundsätzlich genutzt werden.'
           },
           {
-            text: 'B) Ja, für eigene Texte ist KI unproblematisch',
+            text: 'Ja, für eigene Texte ist KI unproblematisch',
             correct: true,
             feedback: '✅ Richtig! Für eigene Texte (ohne Upload fremder Vorlagen) ist KI OK.'
           },
           {
-            text: 'C) Nur mit Genehmigung der Schulleitung',
+            text: 'Nur mit Genehmigung der Schulleitung',
             correct: false,
             feedback: '❌ Nicht zwingend. Das ist eine organisatorische Frage, keine rechtliche.'
           }
