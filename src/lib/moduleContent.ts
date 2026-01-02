@@ -57,6 +57,7 @@ export interface ModuleContent {
   title: string
   description: string
   duration: string
+  maxPoints: number  // <--- DIESE ZEILE HINZUFÜGEN
   videoUrl?: string;  // <--- PASTE THIS NEW LINE HERE
   videoTitle: string
   videoDescription: string
