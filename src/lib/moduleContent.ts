@@ -53,11 +53,11 @@ export interface RoleSpecificContent {
 
 export interface ModuleContent {
   id: string
-  area: 'grundlagen' | 'schulumgebung' // Lernbereich
+  area: 'grundlagen' | 'schulumgebung'
   title: string
   description: string
   duration: string
-  maxPoints: number
+  videoUrl?: string;  // <--- PASTE THIS NEW LINE HERE
   videoTitle: string
   videoDescription: string
   videoPlaceholder: string // Platzhalter für Video/Film/Ton/Slides
@@ -106,9 +106,10 @@ export const moduleData: Record<string, ModuleContent> = {
     description: 'Verstehen Sie die Grundlagen: Was ist eine geistige Schöpfung? Wann entsteht Urheberrechtsschutz?',
     duration: '~15 Min.',
     maxPoints: 100,
-    videoTitle: '🎥 Video-Einführung',
-    videoDescription: 'Zusammenfassung der wichtigsten Konzepte (5 Min.)',
-    videoPlaceholder: 'Hier könnte ein Video, eine Audioaufnahme oder eine Präsentation eingefügt werden.',
+    videoUrl: 'https://aburossi.github.io/slider/?Id=m1_slides', // <--- This is your new link
+    videoTitle: 'Einführung',
+    videoDescription: 'Lernen Sie die Grundprinzipien kennen.',
+    videoPlaceholder: 'Video wird geladen...',
     interactiveTitle: '🎯 Die zwei Voraussetzungen des Urheberrechtsschutzes',
     interactiveElements: [
       {
