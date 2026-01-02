@@ -274,7 +274,7 @@ export default function ModulePage() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Intro Section - Video Placeholder */}
+      {/* Intro Section - Video/Slides Placeholder */}
         {currentStep === 'intro' && (
           <div className="bg-white rounded-xl shadow-md p-8 mb-6">
             <div className="flex items-start gap-4 mb-6">
@@ -285,15 +285,28 @@ export default function ModulePage() {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-lg p-12 mb-6">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Play className="h-10 w-10 text-white" />
-                </div>
-                <p className="text-gray-700 text-lg mb-2">Platzhalter für Multimedia-Inhalte</p>
-                <p className="text-gray-600 text-sm">{module.videoPlaceholder}</p>
+            {/* Logic to show Iframe if URL exists, or Placeholder if not */}
+            {module.videoUrl ? (
+              <div className="w-full bg-black rounded-lg overflow-hidden shadow-lg mb-6 aspect-video">
+                <iframe 
+                  src={module.videoUrl} 
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="Module Presentation"
+                ></iframe>
               </div>
-            </div>
+            ) : (
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-lg p-12 mb-6">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Play className="h-10 w-10 text-white" />
+                  </div>
+                  <p className="text-gray-700 text-lg mb-2">Platzhalter für Multimedia-Inhalte</p>
+                  <p className="text-gray-600 text-sm">{module.videoPlaceholder}</p>
+                </div>
+              </div>
+            )}
             
             <button
               onClick={() => setCurrentStep('interactive')}
