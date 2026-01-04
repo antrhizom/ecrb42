@@ -159,7 +159,10 @@ export default function Dashboard() {
             <div className="bg-purple-50 p-6 rounded-lg border border-purple-100">
               <Award className="h-8 w-8 text-purple-600 mb-3" />
               <div className="text-3xl font-bold text-gray-900">
-                {totalProgress === 100 ? '2' : totalProgress >= 50 ? '1' : '0'}
+                {
+                  (grundlagenProgress.completed >= Math.ceil(grundlagenProgress.total / 2) ? 1 : 0) +
+                  (schulumgebungProgress.completed >= Math.ceil(schulumgebungProgress.total / 2) ? 1 : 0)
+                }
               </div>
               <div className="text-sm text-gray-600 mt-1">Zertifikate verfügbar</div>
             </div>
@@ -264,9 +267,9 @@ function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificat
         <div className="mt-6 pt-6 border-t border-gray-200">
           <button
             onClick={onCertificateClick}
-            disabled={progress.progress < 100}
+            disabled={progress.completed < Math.ceil(progress.total / 2)}
             className={`w-full flex items-center justify-between p-4 rounded-lg transition-all ${
-              progress.progress === 100
+              progress.completed >= Math.ceil(progress.total / 2)
                 ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600 shadow-lg'
                 : 'bg-gray-100 text-gray-400 cursor-not-allowed'
             }`}
@@ -274,14 +277,14 @@ function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificat
             <div className="flex items-center gap-3">
               <Award className="h-6 w-6" />
               <span className="font-semibold">
-                {progress.progress === 100 ? 'Zertifikat anzeigen' : 'Zertifikat (noch nicht freigeschaltet)'}
+                {progress.completed >= Math.ceil(progress.total / 2) ? 'Zertifikat anzeigen' : 'Zertifikat (noch nicht freigeschaltet)'}
               </span>
             </div>
-            {progress.progress === 100 && <ChevronRight className="h-5 w-5" />}
+            {progress.completed >= Math.ceil(progress.total / 2) && <ChevronRight className="h-5 w-5" />}
           </button>
           
-          {/* Bewertung Button - nur sichtbar wenn Bereich abgeschlossen */}
-          {progress.progress === 100 && (
+          {/* Bewertung Button - nur sichtbar wenn mindestens Hälfte der Module abgeschlossen */}
+          {progress.completed >= Math.ceil(progress.total / 2) && (
             <button
               onClick={() => router.push(`/rating/${area.id}`)}
               className="w-full flex items-center justify-between p-4 rounded-lg transition-all mt-3 bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-lg"
