@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { signOut } from 'firebase/auth'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, collection, getDocs } from 'firebase/firestore'
 import { auth, db } from '@/lib/firebase'
-import { BookOpen, Trophy, LogOut, Award, ChevronRight, CheckCircle2 } from 'lucide-react'
+import { BookOpen, Trophy, LogOut, Award, ChevronRight, CheckCircle2, Users, FileCheck } from 'lucide-react'
 import { learningAreas, getAreaProgress, moduleData } from '@/lib/moduleContent'
 
 interface UserData {
@@ -26,10 +26,23 @@ interface UserData {
   }
 }
 
+interface PlatformStats {
+  totalUsers: number
+  totalCertificates: number
+}
+
+interface AreaRating {
+  averageRating: number
+  totalRatings: number
+}
+
 export default function Dashboard() {
   const router = useRouter()
   const [userData, setUserData] = useState<UserData | null>(null)
   const [loading, setLoading] = useState(true)
+  const [platformStats, setPlatformStats] = useState<PlatformStats>({ totalUsers: 0, totalCertificates: 0 })
+  const [grundlagenRating, setGrundlagenRating] = useState<AreaRating>({ averageRating: 0, totalRatings: 0 })
+  const [schulumgebungRating, setSchulumgebungRating] = useState<AreaRating>({ averageRating: 0, totalRatings: 0 })
 
   useEffect(() => {
     const loadUserData = async () => {
@@ -64,7 +77,64 @@ export default function Dashboard() {
       setLoading(false)
     }
 
+    const loadPlatformStats = async () => {
+      try {
+        // Zähle alle registrierten User
+        const usersSnapshot = await getDocs(collection(db, 'users'))
+        const totalUsers = usersSnapshot.size
+        
+        // Zähle vergebene Zertifikate
+        let totalCertificates = 0
+        usersSnapshot.forEach((doc) => {
+          const data = doc.data()
+          if (data.modules) {
+            // Prüfe Grundlagen (2 von 4 Module)
+            const grundlagenModules = ['modul1', 'modul2', 'modul3', 'modul4']
+            const grundlagenCompleted = grundlagenModules.filter(m => data.modules[m]?.completed).length
+            if (grundlagenCompleted >= 2) totalCertificates++
+            
+            // Prüfe Schulumgebung (3 von 5 Module)
+            const schulumgebungModules = ['schule1', 'schule2', 'schule3', 'schule4', 'schule5']
+            const schulumgebungCompleted = schulumgebungModules.filter(m => data.modules[m]?.completed).length
+            if (schulumgebungCompleted >= 3) totalCertificates++
+          }
+        })
+        
+        setPlatformStats({ totalUsers, totalCertificates })
+      } catch (error) {
+        console.error('Error loading platform stats:', error)
+      }
+    }
+
+    const loadRatings = async () => {
+      try {
+        // Lade Grundlagen-Bewertungen
+        const grundlagenDoc = await getDoc(doc(db, 'ratings', 'grundlagen'))
+        if (grundlagenDoc.exists()) {
+          const data = grundlagenDoc.data()
+          setGrundlagenRating({
+            averageRating: data.averageRating || 0,
+            totalRatings: data.totalRatings || 0
+          })
+        }
+        
+        // Lade Schulumgebung-Bewertungen
+        const schulumgebungDoc = await getDoc(doc(db, 'ratings', 'schulumgebung'))
+        if (schulumgebungDoc.exists()) {
+          const data = schulumgebungDoc.data()
+          setSchulumgebungRating({
+            averageRating: data.averageRating || 0,
+            totalRatings: data.totalRatings || 0
+          })
+        }
+      } catch (error) {
+        console.error('Error loading ratings:', error)
+      }
+    }
+
     loadUserData()
+    loadPlatformStats()
+    loadRatings()
   }, [router])
 
   const handleSignOut = async () => {
@@ -117,6 +187,33 @@ export default function Dashboard() {
           </div>
         </div>
       </header>
+
+      {/* Plattform-Statistiken */}
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-white/20 p-3 rounded-lg">
+                <Users className="h-8 w-8" />
+              </div>
+              <div>
+                <div className="text-3xl font-bold">{platformStats.totalUsers}</div>
+                <div className="text-sm text-indigo-100">Registrierte Nutzer</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-white/20 p-3 rounded-lg">
+                <FileCheck className="h-8 w-8" />
+              </div>
+              <div>
+                <div className="text-3xl font-bold">{platformStats.totalCertificates}</div>
+                <div className="text-sm text-indigo-100">Vergebene Zertifikate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Gesamt-Fortschritt */}
@@ -179,6 +276,7 @@ export default function Dashboard() {
             onModuleClick={(moduleId) => router.push(`/modules/${moduleId}`)}
             onCertificateClick={() => router.push('/certificate/grundlagen')}
             router={router}
+            rating={grundlagenRating}
           />
 
           {/* Bereich 2: Schulumgebung */}
@@ -189,6 +287,7 @@ export default function Dashboard() {
             onModuleClick={(moduleId) => router.push(`/modules/${moduleId}`)}
             onCertificateClick={() => router.push('/certificate/schulumgebung')}
             router={router}
+            rating={schulumgebungRating}
           />
         </div>
       </main>
@@ -204,9 +303,10 @@ interface LearningAreaCardProps {
   onModuleClick: (moduleId: string) => void
   onCertificateClick: () => void
   router: ReturnType<typeof useRouter>
+  rating: AreaRating
 }
 
-function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificateClick, router }: LearningAreaCardProps) {
+function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificateClick, router, rating }: LearningAreaCardProps) {
   const modulesList = area.modules.map(moduleId => {
     const moduleData = modules[moduleId as keyof typeof modules]
     return {
@@ -297,6 +397,36 @@ function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificat
               </div>
               <ChevronRight className="h-5 w-5" />
             </button>
+          )}
+          
+          {/* Community-Bewertung */}
+          {rating.totalRatings > 0 && (
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="text-4xl">
+                      {rating.averageRating >= 4.5 ? '🌟' : 
+                       rating.averageRating >= 3.5 ? '😃' :
+                       rating.averageRating >= 2.5 ? '😊' :
+                       rating.averageRating >= 1.5 ? '😐' : '😞'}
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-gray-900">
+                        {rating.averageRating.toFixed(1)}
+                      </div>
+                      <div className="text-xs text-gray-600">von 5.0</div>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm font-semibold text-gray-900">Community-Bewertung</div>
+                    <div className="text-xs text-gray-600">
+                      {rating.totalRatings} Bewertung{rating.totalRatings !== 1 ? 'en' : ''}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </div>
