@@ -72,8 +72,10 @@ export default function Certificate() {
   const progress = getAreaProgress(areaId, userData.modules)
   const areaModules = getModulesByArea(areaId)
 
-  // Prüfe ob Bereich abgeschlossen ist
-  if (progress.progress < 100) {
+  // Prüfe ob mindestens 60% der Punkte erreicht wurden
+  const hasEnoughPoints = progress.progress >= 60
+  
+  if (!hasEnoughPoints) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-xl shadow-lg p-8 max-w-md text-center">
@@ -82,7 +84,7 @@ export default function Certificate() {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Zertifikat noch nicht freigeschaltet</h2>
           <p className="text-gray-600 mb-6">
-            Sie müssen alle Themen im Bereich "{learningArea.title}" abschließen, um das Zertifikat zu erhalten.
+            Sie müssen mindestens 60% der Punkte im Bereich "{learningArea.title}" erreichen, um das Zertifikat zu erhalten.
           </p>
           <p className="text-lg font-semibold text-blue-600 mb-6">
             Aktueller Fortschritt: {progress.progress}%
