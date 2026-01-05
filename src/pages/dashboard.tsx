@@ -83,20 +83,22 @@ export default function Dashboard() {
         const usersSnapshot = await getDocs(collection(db, 'users'))
         const totalUsers = usersSnapshot.size
         
-        // Zähle vergebene Zertifikate
+        // Zähle vergebene Zertifikate (60% Punkte erforderlich)
         let totalCertificates = 0
         usersSnapshot.forEach((doc) => {
           const data = doc.data()
           if (data.modules) {
-            // Prüfe Grundlagen (2 von 4 Module)
+            // Berechne Grundlagen-Fortschritt (400 Punkte max)
             const grundlagenModules = ['modul1', 'modul2', 'modul3', 'modul4']
-            const grundlagenCompleted = grundlagenModules.filter(m => data.modules[m]?.completed).length
-            if (grundlagenCompleted >= 2) totalCertificates++
+            const grundlagenPoints = grundlagenModules.reduce((sum, m) => sum + (data.modules[m]?.score || 0), 0)
+            const grundlagenProgress = Math.round((grundlagenPoints / 400) * 100)
+            if (grundlagenProgress >= 60) totalCertificates++
             
-            // Prüfe Schulumgebung (3 von 5 Module)
+            // Berechne Schulumgebung-Fortschritt (450 Punkte max)
             const schulumgebungModules = ['schule1', 'schule2', 'schule3', 'schule4', 'schule5']
-            const schulumgebungCompleted = schulumgebungModules.filter(m => data.modules[m]?.completed).length
-            if (schulumgebungCompleted >= 3) totalCertificates++
+            const schulumgebungPoints = schulumgebungModules.reduce((sum, m) => sum + (data.modules[m]?.score || 0), 0)
+            const schulumgebungProgress = Math.round((schulumgebungPoints / 450) * 100)
+            if (schulumgebungProgress >= 60) totalCertificates++
           }
         })
         
@@ -215,6 +217,21 @@ export default function Dashboard() {
         </div>
       </div>
 
+      {/* Hinweis für Fragen & Fallbeispiele */}
+      <div className="bg-gradient-to-r from-green-50 to-teal-50 border-b-2 border-green-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-start gap-3">
+            <div className="text-2xl">💬</div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-1">Haben Sie Fragen oder eigene Fallbeispiele?</h3>
+              <p className="text-sm text-gray-600">
+                Nutzen Sie unser Padlet unten auf der Seite, um offene Fragen zu stellen oder Ihre eigenen Urheberrechts-Fälle zu teilen!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Gesamt-Fortschritt */}
         <div className="bg-white rounded-xl shadow-md p-8 mb-8">
@@ -257,8 +274,8 @@ export default function Dashboard() {
               <Award className="h-8 w-8 text-purple-600 mb-3" />
               <div className="text-3xl font-bold text-gray-900">
                 {
-                  (grundlagenProgress.completed >= Math.ceil(grundlagenProgress.total / 2) ? 1 : 0) +
-                  (schulumgebungProgress.completed >= Math.ceil(schulumgebungProgress.total / 2) ? 1 : 0)
+                  (grundlagenProgress.progress >= 60 ? 1 : 0) +
+                  (schulumgebungProgress.progress >= 60 ? 1 : 0)
                 }
               </div>
               <div className="text-sm text-gray-600 mt-1">Zertifikate verfügbar</div>
@@ -289,6 +306,48 @@ export default function Dashboard() {
             router={router}
             rating={schulumgebungRating}
           />
+        </div>
+
+        {/* Padlet für Fragen & Fallbeispiele */}
+        <div className="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-gradient-to-r from-green-600 to-teal-600 p-6 text-white">
+            <div className="flex items-center gap-3">
+              <div className="text-3xl">💬</div>
+              <div>
+                <h2 className="text-2xl font-bold">Ihre Fragen & Fallbeispiele</h2>
+                <p className="text-green-100 mt-1">
+                  Stellen Sie Fragen oder teilen Sie Ihre eigenen Urheberrechts-Fälle mit der Community
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <div className="bg-gray-50 rounded-lg p-4 mb-4">
+              <p className="text-sm text-gray-600">
+                <strong>💡 Tipp:</strong> Dieses Padlet ist ein gemeinsamer Raum für alle Lernenden. 
+                Nutzen Sie es, um Fragen zu stellen, Fallbeispiele zu diskutieren oder Erfahrungen auszutauschen.
+              </p>
+            </div>
+            
+            <div className="relative" style={{ paddingBottom: '75%', height: 0 }}>
+              <iframe
+                src="https://padlet.com/bbwspace/urheberrecht-meine-f-lle-meine-fragen-rwncm26bxq5genyg"
+                frameBorder="0"
+                allow="camera;microphone;geolocation"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                  borderRadius: '8px'
+                }}
+                title="Urheberrecht Padlet"
+              />
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -367,9 +426,9 @@ function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificat
         <div className="mt-6 pt-6 border-t border-gray-200">
           <button
             onClick={onCertificateClick}
-            disabled={progress.completed < Math.ceil(progress.total / 2)}
+            disabled={progress.progress < 60}
             className={`w-full flex items-center justify-between p-4 rounded-lg transition-all ${
-              progress.completed >= Math.ceil(progress.total / 2)
+              progress.progress >= 60
                 ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600 shadow-lg'
                 : 'bg-gray-100 text-gray-400 cursor-not-allowed'
             }`}
@@ -377,14 +436,14 @@ function LearningAreaCard({ area, progress, modules, onModuleClick, onCertificat
             <div className="flex items-center gap-3">
               <Award className="h-6 w-6" />
               <span className="font-semibold">
-                {progress.completed >= Math.ceil(progress.total / 2) ? 'Zertifikat anzeigen' : 'Zertifikat (noch nicht freigeschaltet)'}
+                {progress.progress >= 60 ? 'Zertifikat anzeigen' : 'Zertifikat (noch nicht freigeschaltet)'}
               </span>
             </div>
-            {progress.completed >= Math.ceil(progress.total / 2) && <ChevronRight className="h-5 w-5" />}
+            {progress.progress >= 60 && <ChevronRight className="h-5 w-5" />}
           </button>
           
-          {/* Bewertung Button - nur sichtbar wenn mindestens Hälfte der Module abgeschlossen */}
-          {progress.completed >= Math.ceil(progress.total / 2) && (
+          {/* Bewertung Button - nur sichtbar wenn mindestens 60% der Punkte erreicht */}
+          {progress.progress >= 60 && (
             <button
               onClick={() => router.push(`/rating/${area.id}`)}
               className="w-full flex items-center justify-between p-4 rounded-lg transition-all mt-3 bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-lg"
