@@ -323,7 +323,7 @@ export default function Dashboard() {
           </div>
           
           <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
               {/* GT7 Merkblatt */}
               <a
                 href="https://prolitteris.ch/wp_update2020/wp-content/uploads/merkblatt_schulen_GT_7_2022.pdf"
@@ -437,6 +437,35 @@ export default function Dashboard() {
                 </p>
                 <div className="mt-4 text-sm font-semibold text-orange-600 group-hover:text-orange-700">
                   Webseite besuchen →
+                </div>
+              </a>
+
+              {/* ETH Zürich Handbuch */}
+              <a
+                href="https://ethz.ch/content/dam/ethz/main/eth-zurich/education/lehrentwicklung/files_DE/Handbuch_Urheberrecht_2011_03.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col p-5 bg-gradient-to-br from-red-50 to-rose-50 border-2 border-red-200 rounded-lg hover:border-red-400 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="text-3xl">📖</div>
+                  <svg 
+                    className="h-5 w-5 text-red-400 group-hover:text-red-600 transition-colors" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  ETH Handbuch
+                </h3>
+                <p className="text-sm text-gray-600 flex-grow">
+                  Umfassendes Handbuch zum Urheberrecht in der Lehre von der ETH Zürich
+                </p>
+                <div className="mt-4 text-sm font-semibold text-red-600 group-hover:text-red-700">
+                  PDF öffnen →
                 </div>
               </a>
             </div>
