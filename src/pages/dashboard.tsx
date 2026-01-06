@@ -323,7 +323,7 @@ export default function Dashboard() {
           </div>
           
           <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* GT7 Merkblatt */}
               <a
                 href="https://prolitteris.ch/wp_update2020/wp-content/uploads/merkblatt_schulen_GT_7_2022.pdf"
@@ -408,6 +408,35 @@ export default function Dashboard() {
                 </p>
                 <div className="mt-4 text-sm font-semibold text-green-600 group-hover:text-green-700">
                   PDF öffnen →
+                </div>
+              </a>
+
+              {/* Creative Commons Digital Law */}
+              <a
+                href="https://www.ccdigitallaw.ch/introduction-d24/?lang=de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col p-5 bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200 rounded-lg hover:border-orange-400 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="text-3xl">🔓</div>
+                  <svg 
+                    className="h-5 w-5 text-orange-400 group-hover:text-orange-600 transition-colors" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  CC Digital Law
+                </h3>
+                <p className="text-sm text-gray-600 flex-grow">
+                  Creative Commons Lizenzen und digitales Urheberrecht verständlich erklärt
+                </p>
+                <div className="mt-4 text-sm font-semibold text-orange-600 group-hover:text-orange-700">
+                  Webseite besuchen →
                 </div>
               </a>
             </div>
