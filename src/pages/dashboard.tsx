@@ -308,6 +308,112 @@ export default function Dashboard() {
           />
         </div>
 
+        {/* Wichtige Ressourcen */}
+        <div className="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
+            <div className="flex items-center gap-3">
+              <div className="text-3xl">📚</div>
+              <div>
+                <h2 className="text-2xl font-bold">Wichtige Ressourcen & Merkblätter</h2>
+                <p className="text-blue-100 mt-1">
+                  Ergänzende Dokumente und Informationen zum Urheberrecht in Schulen
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* GT7 Merkblatt */}
+              <a
+                href="https://prolitteris.ch/wp_update2020/wp-content/uploads/merkblatt_schulen_GT_7_2022.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col p-5 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-lg hover:border-purple-400 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="text-3xl">📄</div>
+                  <svg 
+                    className="h-5 w-5 text-purple-400 group-hover:text-purple-600 transition-colors" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  GT7 Merkblatt
+                </h3>
+                <p className="text-sm text-gray-600 flex-grow">
+                  Offizielles Merkblatt von ProLitteris zu den GT7-Tarifen für Schulen in der Schweiz
+                </p>
+                <div className="mt-4 text-sm font-semibold text-purple-600 group-hover:text-purple-700">
+                  PDF öffnen →
+                </div>
+              </a>
+
+              {/* Educa Infoseite */}
+              <a
+                href="https://www.educa.ch/de/taetigkeiten/fragen-aus-der-bildungspraxis/urheberrechte-von-bildern-text-und-musik"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col p-5 bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-lg hover:border-blue-400 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="text-3xl">🎓</div>
+                  <svg 
+                    className="h-5 w-5 text-blue-400 group-hover:text-blue-600 transition-colors" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Educa Infoseite
+                </h3>
+                <p className="text-sm text-gray-600 flex-grow">
+                  Umfassende Informationen zur Nutzung urheberrechtlich geschützter Werke in Schulen
+                </p>
+                <div className="mt-4 text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                  Webseite besuchen →
+                </div>
+              </a>
+
+              {/* Schulrecht.ch */}
+              <a
+                href="https://www.schulrecht.ch/wp-content/uploads/Wer_hats_erfunden_und_wem_geh%C3%B6rt_es.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col p-5 bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-200 rounded-lg hover:border-green-400 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="text-3xl">⚖️</div>
+                  <svg 
+                    className="h-5 w-5 text-green-400 group-hover:text-green-600 transition-colors" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Nutzungsrechte-Übertrag
+                </h3>
+                <p className="text-sm text-gray-600 flex-grow">
+                  Rechtliche Aspekte zur Übertragung von Nutzungsrechten bei Lehrpersonen-Werken
+                </p>
+                <div className="mt-4 text-sm font-semibold text-green-600 group-hover:text-green-700">
+                  PDF öffnen →
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Padlet für Fragen & Fallbeispiele */}
         <div className="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
           <div className="bg-gradient-to-r from-green-600 to-teal-600 p-6 text-white">
