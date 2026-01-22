@@ -160,7 +160,7 @@ export default function Certificate() {
             {/* Beschreibung - KOMPAKT */}
             <div className="border-t border-b border-gray-200 py-5 mb-5 print:py-3 print:mb-4">
               <p className="text-center text-gray-700 text-base leading-relaxed print:text-sm">
-                für die erfolgreiche Teilnahme und das Abschließen aller Lernthemen im Bereich<br />
+                für die erfolgreiche Teilnahme und das Abschliessen aller Lernthemen im Bereich<br />
                 <span className="font-bold text-blue-600 text-xl print:text-lg">"{learningArea.title}"</span>
               </p>
             </div>
@@ -240,7 +240,7 @@ export default function Certificate() {
           <div className="bg-gray-50 px-8 py-4 text-center border-t border-gray-200 print:px-10 print:py-3">
             <p className="text-xs text-gray-600 leading-relaxed print:text-[10px]">
               Dieses Zertifikat bestätigt die erfolgreiche Teilnahme an der interaktiven Lernplattform<br />
-              zum Thema Urheberrecht im Schweizer Schulkontext gemäß URG und GT7.
+              zum Thema Urheberrecht im Schweizer Schulkontext gemäss URG und GT7.
             </p>
           </div>
         </div>
@@ -289,7 +289,7 @@ export default function Certificate() {
             page-break-inside: avoid;
           }
           
-          /* Schriftgrößen optimieren */
+          /* Schriftgrössen optimieren */
           h1 { font-size: 1.5rem !important; }
           h2 { font-size: 1.25rem !important; }
           h3 { font-size: 0.875rem !important; }
